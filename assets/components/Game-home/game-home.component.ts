@@ -1,7 +1,10 @@
 import {Component} from '@angular/core';
 import {Definations} from '../../definations/def';
+import {BasicFunctions} from '../../definations/basicfunction';
 
-const definations = new Definations;
+var def = new Definations;
+
+var basicFunction = new BasicFunctions;
 
 @Component({
     selector: 'component-game-home',
@@ -12,7 +15,8 @@ const definations = new Definations;
 export class GameHomeComponent {
 
     constructor(){
-        console.log(definations.PIECES);
+        def = basicFunction.InitFilesRanksBrd();
+        console.log(def.RanksBrd[basicFunction.FRToSq(def.FILES.FILE_C, def.RANKS.RANK_5)]);
     }
 
 }
